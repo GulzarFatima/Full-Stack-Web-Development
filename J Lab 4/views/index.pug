@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Movies 
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Movie List (Lab 4)
+
+    each m in movies 
+      h2 #{m.title}
+      p Year: #{m.year}
+      p Rating: #{m.rating}
+
+    a.button(href="/update") Update Rating
+    a.button(href="/delete") Delete "R" Rated

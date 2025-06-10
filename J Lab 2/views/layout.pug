@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    title #{title} | Fake Vegetable Shop
+    link(rel='stylesheet', href='css/style.css')
+    block page-style
+  body
+    header#header
+      include nav.pug
+    main#main
+      block layout-content
+    footer#footer
+      include footer.pug

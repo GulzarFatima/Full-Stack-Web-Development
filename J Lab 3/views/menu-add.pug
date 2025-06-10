@@ -1,0 +1,23 @@
+extends layout
+
+block layout-content
+  h1 Add Menu Link
+
+  form(action="/admin/menu/add/submit", method="post")
+    //- weight field (determines link order)
+    div
+      label(for="wgt") Weight:
+      input#wgt(type="number", name="weight", placeholder="0", required)
+
+    //- name field (text to display)
+    div
+      label(for="link-text") Link Text:
+      input#link-text(type="text", name="name", placeholder="Home", required)
+
+    //- path field (URL path of the link)
+    div
+      label(for="href") Link URI:
+      input#href(type="text", name="path", placeholder="e.g. /", required)
+
+    //- submit button
+    button(type="submit") Add Link

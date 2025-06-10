@@ -1,0 +1,31 @@
+extends layout 
+
+block page-style
+  link(rel="stylesheet", href="css/style.css")
+
+block layout-content 
+  div#content 
+    h1 Welcome to the Vegetable Shop
+    p We offer a variety of fresh vegetables for sale. Browse our collection and order directly from our site.
+
+  div.products
+    div.product
+      img.img(src="images/tomatoes.jpg", alt="Tomatoes")
+      h3.product-name Tomatoes
+      div.action
+        h4 Price: $3.99 per lb
+        button.Fbtn Buy Now
+
+    div.product
+      img.img(src="images/lettuce.jpg", alt="Lettuce")
+      h3.product-name Lettuces
+      div.action
+        h4 Price: $1.99 per item
+        button.Fbtn Buy Now
+
+    div.product
+      img.img(src="images/carrots.jpg", alt="Carrots")
+      h2.product-name Carrots
+      div.action
+        h4 Price: $2.50 per lb
+        button.Fbtn Buy Now

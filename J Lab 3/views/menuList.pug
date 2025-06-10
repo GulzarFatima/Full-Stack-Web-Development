@@ -1,0 +1,19 @@
+extends layout 
+
+block layout-content 
+  h1 Menu links 
+  a(href="/admin/menu/add") + Add new link
+  table 
+    thead 
+      tr 
+        th Link 
+        th Actions
+    tbody 
+      each link in links
+        tr 
+          td #{link.name} (#{link.path})
+          td
+            a(href="/admin/menu/edit?linkId=" + link._id) Edit
+            form(action="/admin/menu/delete", method="get")
+              input(type="hidden", name="linkId", value=link._id)
+              button(type="submit") Delete
