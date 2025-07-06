@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+  .columns
+    .column-left
+      h2 Manage Stickers (Add/Delete)
+      .actions
+        a.button(href="/admin/stickers/add") Add Sticker
+        a.button(href="/admin/stickerpacks/add") Add Sticker Pack
+
+    .column-right
+      h2 Existing Stickers
+      if stickers.length
+        table
+          thead
+            tr
+              th Name
+              th Price
+              th Image
+          tbody
+            each sticker in stickers
+              tr
+                td= sticker.name
+                td $#{sticker.price.toFixed(2)}
+                td
+                  if sticker.imageUrl
+                    img(src=sticker.imageUrl, alt=sticker.name, style="width:50px;height:auto;")
+      else
+        p No stickers yet.

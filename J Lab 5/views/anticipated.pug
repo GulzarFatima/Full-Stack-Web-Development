@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 Most Anticipated Shows
+  ul
+    each item in shows
+      li
+        a(href=`/show/${item.show.ids.slug}`) #{item.show.title} (#{item.show.year})

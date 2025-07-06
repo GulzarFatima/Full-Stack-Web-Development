@@ -1,0 +1,10 @@
+extends layout
+
+block main-content
+  - const name = library.querySelector('name')?.textContent;
+  - const address = library.querySelector('address')?.textContent;
+  - const phone = library.querySelector('phoneNumber')?.textContent;
+
+  h1= name
+  p Address: #{address}
+  p Phone: #{phone}

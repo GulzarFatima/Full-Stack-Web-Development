@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+  .columns
+    .column-left
+      a.button-tertiary(href="/admin") ← Back
+      h2 Add a New Sticker
+      form(action="/admin/stickers" method="POST")
+        label(for="name") Name:
+        input(type="text" name="name" required)
+
+        label(for="price") Price:
+        input(type="number" step="0.01" name="price" required)
+
+        label(for="description") Description:
+        textarea(name="description")
+
+        label(for="imageUrl") Image URL:
+        input(type="text" name="imageUrl")
+
+        button.button-primary(type="submit") Add Sticker
+
+    .column-right
+      h2 Existing Stickers
+      if stickers.length
+        table
+          thead
+            tr
+              th Name
+              th Price
+              th Description
+              th Image
+              th Actions
+          tbody
+            each sticker in stickers
+              tr
+                td= sticker.name
+                td $#{sticker.price.toFixed(2)}
+                td= sticker.description
+                td
+                  if sticker.imageUrl
+                    img(src=sticker.imageUrl, alt=sticker.name, style="width:50px;height:auto;")
+                  else
+                    | (no image)
+                td
+                  form(action=`/admin/stickers/delete/${sticker._id}` method="POST" style="display:inline;")
+                    button(type="submit" class="delete-button") Delete
+      else
+        p No stickers found. Add some!
+
+  script.
+    window.stickerData = !{JSON.stringify(stickers)};
+  script(src="/packLogic.js")

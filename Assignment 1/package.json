@@ -1,0 +1,23 @@
+{
+  "name": "assignment-1",
+  "version": "1.0.0",
+  "description": "sticker management system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "GulzarF",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^4.21.2",
+    "mongoose": "^8.16.1",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
